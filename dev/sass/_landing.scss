@@ -1,0 +1,134 @@
+// index page flexbox controls
+#pageWrapHome {
+  margin: 0 auto;
+  max-width: 125rem;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  @include tablet {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+  }
+}
+
+
+// leftHeroSection index page-only controls
+#logowing {  /* logo controls (double wings) */
+  margin: 0 auto 2.5%;
+  display: block;
+  max-width: 60%;
+  opacity: 0.8;
+  @include phablet { max-width: 75%; }
+  @include tablet { margin: 12.5% auto 5%; }
+  @include desktop {
+    max-height: 45vh;
+  }
+}
+.introContent {
+  margin-bottom: 10%;
+  padding: 1.5rem;
+  flex-grow: 1 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: $white;
+  @include tablet {
+    margin-bottom: 5%;
+    padding: 1.5rem 3rem;
+  }
+}
+.buttonControl { /* animation controls same as rightNav */
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border: 0.125rem solid $white;
+  border-radius: 0.25em;
+  background-color: rgba(0, 0, 0, 0.0);
+  color: $white;
+  font-size: 0.9375rem;
+  letter-spacing: 0.125rem;
+  text-transform: lowercase;
+}
+#buttonAbout { margin-right: 2.25rem; }
+#buttonNavOpen,
+#buttonNavClose { /* hide buttons when screen size allows rightNav to show */
+  @include tablet { display: none; }
+}
+
+
+// right side of screen
+#rightNav {
+  padding: 0 1rem;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  @include tablet {
+    position: static;
+    background-color: transparent;
+    border-left: 0.25rem solid $beige;
+  }
+}
+// set right section to fill screen height
+.navContainer { // child div of right section
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+.rightNavProject { /* each article */
+    padding: 0.5rem 3rem;
+    align-self: stretch;
+    display: flex;
+    justify-content: space-around;
+}
+.navContainer a.rightNavLink { border-bottom: 1px solid $silver; }
+.navContainer a.rightNavLink:last-of-type { border-bottom: none; }
+.rightNavSVG,
+.rightNavProject svg {
+  flex: 1;
+  max-width: 1rem;
+  object-fit: contain;
+  align-self: baseline;
+  fill: $teal;
+  @include tablet { max-width: 3rem; }
+}
+.rightNavText {
+  flex: 2;
+  margin-left: 1rem;
+  align-self: baseline;
+}
+#buttonNavClose {
+  padding: 1rem 10% 1rem;
+  border: none;
+  text-align: right;
+  color: $teal;
+  cursor: pointer;
+}
+
+// nav effect controls
+a.rightNavLink { color: $teal; }
+
+.buttonControl:hover,
+.buttonControl:active,
+.navContainer a.rightNavLink:hover,
+.navContainer a.rightNavLink:active {
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: glow 0.35s ease-in;
+  -moz-animation: glow 0.35s ease-in;
+  animation: glow 0.35s ease-in;
+}
+@-webkit-keyframes glow {
+  from { background-color: rgba(0, 0, 0, 0.0); }
+  to { background-color: rgba(0, 0, 0, 0.8); }
+}
+@-moz-keyframes glow {
+  from { background-color: rgba(0, 0, 0, 0.0); }
+  to { background-color: rgba(0, 0, 0, 0.8); }
+}
+@-keyframes glow {
+  from { background-color: rgba(0, 0, 0, 0.0); }
+  to { background-color: rgba(0, 0, 0, 0.8); }
+}

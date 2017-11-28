@@ -1,0 +1,58 @@
+// skill chart controls
+#skillsDesign,
+#skillsWeb,
+#skillsOffice { /* the parent article */
+  background-color: $silver;
+  color: $white;
+  @include tablet {
+    display: none;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+.skillBox { /* the div inside the article */
+  padding-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.skillChart h3 { flex: 1 100%; }
+.skillBox p {
+  margin-bottom: 0.25rem;
+  flex: 1 50%;
+  letter-spacing: 0.125em;
+}
+.skillBox p:first-child { font-weight: bold; }
+.skillBox p:nth-child(2) { text-align: right; }
+
+// skill bar controls
+.skillBar {
+  flex-grow: 2 100%;
+  padding: 0.25rem;
+  width: 100%;
+  background-color: $black;
+  border: 1px solid $teal;
+  border-radius: 0.125rem;
+}
+.skillLevel {
+  height: .5rem;
+  background-color: $teal;
+}
+.percent80 { width: 80%; }
+.percent60 { width: 60%; }
+.percent40 { width: 40%; }
+.percent20 { width: 20%; }
+
+// button controls
+.buttonHidden {
+  display: none;
+  @include tablet {
+    display: inline-block;
+    margin-right: 2.25rem;
+  }
+}
+.buttonTeal {
+  border-color: $teal;
+  color: $teal;
+}

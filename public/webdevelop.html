@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Emily Wing | IDM Mid-Program Review</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Average|Quicksand" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://use.fontawesome.com/506df0e47b.js"></script>
+  </head>
+
+  <body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div id="pageWrap" class="flexContainer">
+      <nav id="mainNavLanding" class="mainNav">
+        <i id="iconNav" class="fa fa-bars fa-2x"></i>
+        <ul id="navList">
+          <li id="buttonMainNavClose"><i class="fa fa-window-close fa-2x"></i></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="webdesign.html">Web Design</a></li>
+          <li><a href="digmarket.html">Digital Marketing</a></li>
+          <li><a href="resdesign.html">Responsive Design</a></li>
+          <li><a href="#" class="currentPage">Web Development</a></li>
+        </ul>
+      </nav>
+
+      <div id="leftHeroSection" class="flexSection">
+        <div class="heroContainer">
+          <div class="picContent">
+            <img src="img/iconWebDevelopment.svg" title="Web Development" alt="Web Development Icon">
+          </div> <!-- ends .picContent -->
+          <div class="leftTextContent">
+            <h1>Fall 2017 Web Development Week 7 Exercise</h1>
+            <p>An exercise demonstrating JavaScript onClick function applying a CSS3 style with&nbsp;transitions.</p>
+          </div> <!-- ends .textContent -->
+        </div>  <!-- ends .heroContainer -->
+      </div> <!-- ends #leftHeroSection .flexSection -->
+
+      <div id="rightInfoSection" class="flexSection">
+        <div class="infoContainer">
+          <article id="article01" class="rightInfo">
+            <img src="img/X_MCAD.gif" title="Fall 2017 Web Development Week 7 Exercise" alt="MCAD Logo" class="articleImg">
+            <div class="rightTextContent">
+              <h3>Exercise 7.2: Trading Classes</h3>
+              <p>Midway through the current semester, the Web Development course entered week 7, and the fifth week of learning JavaScript. The week's topic focused on three key functions of JavaScript that I had been dying to learn since starting the&nbsp;course:</p>
+              <ol>
+                <li>Accessing the DOM with JavaScript</li>
+                <li>Modifying the DOM with JavaScript</li>
+                <li>Changing the appearance of DOM elements by managing CSS classes with JavaScript</li>
+              </ol>
+            </div> <!-- ends .rightTextContent -->
+            <a href="#article02"><button type="button" id="button01-02" class="buttonControl buttonTeal buttonHidden">Next</button></a>
+          </article>
+          <article id="article02" class="rightInfo hideSection">
+            <div class="rightTextContent flexible">
+              <div class="flexItem50">
+                <h4>Exercise Requirements</h4>
+                <ul>
+                  <li>Create an HTML document that contains a DIV with an ID attribute</li>
+                  <li>In an external CSS stylesheet, apply styles to this DIV element. Also create a CSS class that would change the appearance of the DIV when the class is applied to the DIV</li>
+                  <li>In an external JavaScript file, use an onClick handler to apply the CSS class to the DIV</li>
+                  <li>Then, try experimenting with CSS3 transitions on the property that is changed by adding the class</li>
+                </ul>
+              </div>
+              <div class="flexItem50">
+                <h4>Technologies</h4>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript onClick handler</li>
+                </ul>
+              </div>
+              <div class="flexItem100">
+                <a href="#article01"><button type="button" id="button02-01" class="buttonControl buttonTeal buttonHidden flexItem50">Previous</button></a>
+                <a href="#article03"><button type="button" id="button02-03" class="buttonControl buttonTeal buttonHidden flexItem50">Next</button></a>
+              </div>
+            </div> <!-- ends .rightTextContent -->
+          </article>
+          <article id="article03" class="rightInfo hideSection">
+            <div class="rightTextContent">
+              <h3>Coding Something Colorful</h3>
+              <p>I was very eager and inspired to try out these&nbsp;functions!</p>
+<div class="codeSample"> <!-- moved to left for whitespace appearance -->
+  <pre>
+    <code>
+      var red = document.getElementById("red");
+      var orange = document.getElementById("orange");
+      var yellow = document.getElementById("yellow");
+      var green = document.getElementById("green");
+      var teal = document.getElementById("teal");
+      var blue = document.getElementById("blue");
+      var indigo = document.getElementById("indigo");
+      var violet = document.getElementById("violet");
+
+      red.onclick = function () {
+        if(red.className = "start") {
+          console.log("growing red");
+          red.className = ("end");
+        }
+      }
+      orange.onclick = function () {
+        if(orange.className = "start") {
+          console.log("growing orange");
+          orange.className = ("end");
+        }
+      }
+      yellow.onclick = function () {
+        if(yellow.className = "start") {
+          console.log("growing yellow");
+          yellow.className = ("end");
+        }
+      }
+      green.onclick = function () {
+        if(green.className = "start") {
+          console.log("growing green");
+          green.className = ("end");
+        }
+      }
+      teal.onclick = function () {
+        if(teal.className = "start") {
+          console.log("growing teal");
+          teal.className = ("end");
+        }
+      }
+      blue.onclick = function () {
+        if(blue.className = "start") {
+          console.log("growing blue");
+          blue.className = ("end");
+        }
+      }
+      indigo.onclick = function () {
+        if(indigo.className = "start") {
+          console.log("growing indigo");
+          indigo.className = ("end");
+        }
+      }
+      violet.onclick = function () {
+        if(violet.className = "start") {
+          console.log("growing violet");
+          violet.className = ("end");
+        }
+      }
+    </code>
+  </pre>
+</div> <!-- ends .codeSample (div must be flush for whitespace appearance) -->
+              <a href="#article02"><button type="button" id="button03-02" class="buttonControl buttonTeal buttonHidden">Previous</button></a>
+              <a href="#article04"><button type="button" id="button03-04" class="buttonControl buttonTeal buttonHidden">Next</button></a>
+            </div> <!-- ends .rightTextContent -->
+          </article>
+          <article id="article04" class="rightInfo hideSection">
+            <div class="rightTextContent">
+              <h3>How it Starts</h3>
+              <img src="img/webdev7-2-ready.jpg" title="Fall 2017 Web Development Exercise 7.2" alt="Fall 2017 Web Development Exercise 7.2 Site Loaded Screenshot" class="articleImg">
+              <a href="#article03"><button type="button" id="button04-03" class="buttonControl buttonTeal buttonHidden">Previous</button></a>
+              <a href="#article05"><button type="button" id="button04-05" class="buttonControl buttonTeal buttonHidden">Next</button></a>
+            </div> <!-- ends .rightTextContent -->
+          </article>
+          <article id="article05" class="rightInfo hideSection">
+            <div class="rightTextContent">
+              <h3>How it Goes</h3>
+              <img src="img/webdev7-2-go.jpg" title="Fall 2017 Web Development Exercise 7.2" alt="Fall 2017 Web Development Exercise 7.2 Site Clicked Screenshot" class="articleImg">
+              <p>Visit the <a href="https://ewing.studio.mcad.edu/webdev2/wk07/ex7-2/index.html" target="_blank">site</a>.</p>
+              <a href="#article04"><button type="button" id="button05-04" class="buttonControl buttonTeal buttonHidden">Previous</button></a>
+            </div> <!-- ends .rightTextContent -->
+          </article>
+          <footer class="pageFoot">
+            <div class="positionWrap">
+              <div class="socialLinks">
+                <a href="http://facebook.com/emily.m.wing" target="_blank" title="Follow me on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
+                <a href="https://twitter.com/EmilyWing0" target="_blank" title="Follow me on Twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                <a href="https://www.pinterest.com/emilymwing/" target="_blank" title="Follow me on Pinterest"><i class="fa fa-pinterest fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/emily-wing" target="_blank" title="Connect with me on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
+                <a href="mailto:emwing@emily-wing.com" target="_top" title="Send me an E-mail"><i class="fa fa-envelope fa-lg"></i></a>
+                <a href="#top"><label for="returnToTop" id="buttonTopMobile" class="buttonReturn"><i class="fa fa-arrow-up fa-lg"></i></label></a>
+                <a href="#top" title="Return to Top"><label for="returnToTop" id="buttonTop" class="buttonReturn"><i class="fa fa-arrow-up fa-lg"></i></label></a>
+              </div>
+              <p>&copy;2017 Emily Wing</p>
+            </div> <!-- ends .positionWrap -->
+          </footer>
+        </div> <!-- ends #infoContainer -->
+      </div> <!-- ends #rightInfoSection .flexSection -->
+    </div> <!-- ends #pageWrap -->
+
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script>
+  </body>
+</html>

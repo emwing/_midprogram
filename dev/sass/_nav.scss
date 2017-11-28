@@ -1,0 +1,99 @@
+// layout appearance
+#iconNav,
+#buttonTopMobile,
+#buttonTopBg,
+#buttonTop {
+  padding: 0.75rem 1rem;
+  border: 0.125rem solid $white;
+  border-radius: 0.25em;
+  background-color: rgba(0, 0, 0, 0.8);
+  @include tablet {
+    background-color: transparent;
+    border: none;
+  }
+}
+#iconNav {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 500;
+  @include tablet {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+#iconNav,
+#buttonMainNavClose,
+#buttonTopMobile,
+#buttonTopBg,
+#buttonTop {
+  color: $teal;
+  cursor: pointer;
+}
+#buttonTopMobile {
+  display: inline;
+  @include tablet { display: none; }
+}
+#buttonTopBg,
+#buttonTop {
+  display: none;
+  @include tablet { display: inline; }
+}
+#navList {
+  margin: 0;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  list-style: none;
+  @include tablet { width: 40%; }
+}
+#buttonMainNavClose,
+#navList li a {
+  display: block;
+  padding: 1rem 3rem;
+  align-self: stretch;
+  justify-content: space-around;
+  border-bottom: 1px solid $silver;
+  color: $cyan;
+  font-family: $header-font;
+  font-weight: bold;
+  letter-spacing: .2rem;
+}
+
+#navList li a.currentPage { color: #007C88; }
+
+#buttonMainNavClose,
+#navList li:last-child a { border-bottom: none; }
+
+#buttonMainNavClose { text-align: right; }
+
+// hover effects
+#buttonMainNavClose:hover,
+#buttonMainNavClose:active,
+#navList a:hover,
+#navList a:active {
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: glow 0.35s ease-in;
+  -moz-animation: glow 0.35s ease-in;
+  animation: glow 0.35s ease-in;
+}
+@-webkit-keyframes glow {
+  from { background-color: rgba(0, 0, 0, 0.0); }
+  to { background-color: rgba(0, 0, 0, 0.8); }
+}
+@-moz-keyframes glow {
+  from { background-color: rgba(0, 0, 0, 0.0); }
+  to { background-color: rgba(0, 0, 0, 0.8); }
+}
+@-keyframes glow {
+  from { background-color: rgba(0, 0, 0, 0.0); }
+  to { background-color: rgba(0, 0, 0, 0.8); }
+}

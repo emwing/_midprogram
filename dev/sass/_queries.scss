@@ -1,0 +1,23 @@
+@mixin phablet {
+  @media #{$phablet-width} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$tablet-width} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media #{$desktop-width} {
+    @content;
+  }
+}
+
+@mixin full {
+  @media #{$full-width} {
+    @content;
+  }
+}

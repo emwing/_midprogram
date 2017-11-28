@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html { box-sizing: border-box; }
+
+*,
+*:before,
+*:after { box-sizing: inherit; }
+
+svg,
+img {
+  max-width: 100%;
+  image-rendering: -webkit-optimize-contrast; /* fix chrome's image sharpness per: https://medium.freecodecamp.org/-898b38a6c0e1 */
+}

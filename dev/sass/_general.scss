@@ -1,0 +1,217 @@
+// Main flexbox controls
+#pageWrap {
+  margin: 0 auto;
+  max-width: 125rem;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  @include tablet {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+// set left and right sections to flex for non-mobile
+.flexSection { @include tablet { flex: 1 50%; } }
+
+// general text effects
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-family: $header-font; }
+
+h1,
+h2,
+h3 { margin: 0 0 0.75rem 0; }
+
+h4,
+h5,
+h6 { margin-bottom: 0.25rem; }
+
+h1 {
+  font-size: 1.25rem;
+  @include phablet { font-size: 1.75rem; }
+  @include tablet { font-size: 2.25rem; }
+  @include desktop { font-size: 2.5rem; }
+}
+h2 {
+  font-size: 1.125rem;
+  @include phablet { font-size: 1.5rem; }
+  @include tablet { font-size: 1.75rem; }
+  @include desktop { font-size: 2rem; }
+}
+h3 {
+  font-size: 1.0625rem;
+  @include phablet { font-size: 1.25rem; }
+  @include tablet { font-size: 1.5rem; }
+  @include desktop { font-size: 1.75rem; }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p { letter-spacing: 0.0625rem; }
+
+ol,
+ul,
+p { font-family: $copy-font; }
+
+ol,
+ul { margin: 0 1rem; }
+
+a {
+  text-decoration: none;
+  color: $teal;
+}
+
+
+// leftHeroSection controls
+#leftHeroSection {
+  background: $teal url("../img/herobg.jpg") repeat-x; /* fallback */
+  background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient($beige, $teal); /* for general */
+  background-attachment: fixed;
+}
+// set left and section's child divs to flex and fill screen
+.heroContainer { /* left section div only */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  @include tablet {
+    height: 100vh;
+    justify-content: center;
+  }
+}
+.picContent {
+  margin: 0 auto 2.5%;
+  width: 75%;
+  height: 60vh;
+  overflow: visible;
+  position: relative;
+}
+.picContent img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-height: 100%;
+  opacity: 0.8;
+}
+.leftTextContent {
+  margin-bottom: 10%;
+  padding: 1.5rem;
+  flex-grow: 1 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: $white;
+  @include tablet {
+    margin-bottom: 5%;
+    padding: 1.5rem 3rem;
+  }
+}
+
+// rightInfoSection controls
+#rightInfoSection { @include tablet { height: 100vh; } }
+.infoContainer { // set right sections' child divs to flex
+  min-height: 100vh;
+  @include tablet {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    height: 100vh;
+    border-left: 0.25rem solid $beige;
+  }
+}
+.rightInfo { /* each article */
+  padding: 1rem;
+  @include tablet {
+    padding: 1rem 3rem;
+    align-self: stretch;
+  }
+}
+.rightTextContent p { margin-bottom: 1rem; }
+
+.articleImg { margin-bottom: 1rem; }
+
+.hideSection {
+  display: block;
+  @include tablet { display: none; }
+}
+
+.codeSample {
+  width: 100%;
+  max-height: 22rem;
+  overflow: auto;
+  background-color: $silver;
+  color: $white;
+}
+pre {
+  padding: 0.75rem;
+  display: block;
+  white-space: pre;
+  text-align: left;
+}
+
+
+// general flexbox controls
+.flexible {
+  @include tablet {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.flexItem33 {
+  padding-bottom: 1rem;
+  @include tablet { flex: 1 33.3333333333333%; }
+}
+.flexItem50 {
+  padding-bottom: 1rem;
+  @include tablet { flex: 1 50%; }
+}
+.flexItem100 {
+  @include tablet { flex: 1 100%; }
+}
+
+// footer controls
+  footer {
+    // margin-top: 1rem;
+    padding: 1rem;
+    background-color: $white;
+    color: $black;
+    text-align: center;
+    @include tablet {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  footer.homeFoot { // landing page only
+    background-color: transparent;
+    color: $white;
+    @include tablet { color: $black; }
+  }
+  .socialLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .socialLinks a i {
+    padding: 1rem;
+    flex: 1;
+  }
