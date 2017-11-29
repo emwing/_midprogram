@@ -1,5 +1,10 @@
 $(document).ready(function() {
 // chrome mobile vh fix (prevent resizing vh when url bar disappears on scroll) (referenced from https://stackoverflow.com/questions/39384154/calculating-viewport-height-on-chrome-android-with-css)
+/* TO DO: when viewing site on iphone with chrome:
+  1. url bar does not minimize on scroll
+  2. scrolling is stiff
+  3. return to top buttons no longer function on mobile
+Figure out why and fix!! */
   function calcVH() {
     $("#pageWrap").innerHeight( $(this).innerHeight() );
   }
@@ -23,8 +28,9 @@ $(document).ready(function() {
     }, 600, "linear");
   });
 
-/* non-landing page mainNav controls
+/* non-index page mainNav controls
   listens for click on menu icon to open side menu */
+  // TO DO: convert this to css checkbox with transitions
   $("#iconNav").click (function() {
     $("#navList").animate ( {
       "right": "0"
@@ -36,7 +42,10 @@ $(document).ready(function() {
     }, 1000, "swing");
   });
 
-  // fadeToggle() the about articles when next/previous button clicked (referenced code from http://jsfiddle.net/n53qg/ )
+// fadeToggle() the about articles when next/previous button clicked (referenced code from http://jsfiddle.net/n53qg/ )
+  // TO DO: find a way to not use display: none with the challenge of Flexbox affecting layout
+  // TO DO: convert to css with transitions for jquery to toggle as a reusable function
+  // TO DO: figure out how to leverage jquery next()/previous() to simplify controls
   $("#buttonSkillsDesignN").click (function() { // bg to design
     $("#backgroundInfo").fadeOut (350);
     $("#skillsDesign").delay(355).fadeIn (1000);
@@ -81,7 +90,9 @@ $(document).ready(function() {
     }, 360);
   });
 
-  // fadeToggle() the non-About page articles when next/previous button clicked (referenced code from http://jsfiddle.net/n53qg/ )
+// fadeToggle() the non-About page articles when next/previous button clicked (referenced code from http://jsfiddle.net/n53qg/ )
+  // TO DO: convert to css with transitions for jquery to toggle as a reusable function
+  // TO DO: figure out how to leverage jquery next()/previous() to simplify controls (challenge: button is inside a div that is inside the article)
   $("#button01-02").click (function() { // 1 to 2
     $("#article01").fadeOut (350);
     $("#article02").delay(355).fadeIn (1000);
