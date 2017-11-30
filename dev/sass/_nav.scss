@@ -68,6 +68,18 @@
   font-weight: bold;
   letter-spacing: .2rem;
 }
+// checkbox-controlled nav
+.cntrlNav { // hides the checkbox
+  display: none;
+  visibility: hidden;
+}
+.cntrlNav ~ #navList {
+  -webkit-transition: right 1s ease-out; // Safari
+  -moz-transition: right 1s ease-out; // Firefox
+  -o-transition: right 1s ease-out; // Opera
+  transition: right 1s ease-out;
+}
+.cntrlNav:checked ~ #navList { right: 0; }
 
 #navList li a.currentPage { color: #007C88; }
 

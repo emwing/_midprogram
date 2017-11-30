@@ -130,7 +130,15 @@ a {
 }
 
 // rightInfoSection controls
-#rightInfoSection { @include tablet { height: 100vh; } }
+#rightInfoSection {
+  // background-color: $white;
+  -webkit-transition: all 360ms ease-in;
+  -moz-transition: all 360ms ease-in;
+  transition: all 360ms ease-in;
+  @include tablet { height: 100vh; }
+}
+.silverBg { background-color: $silver; }
+
 .infoContainer { // set right sections' child divs to flex
   min-height: 100vh;
   @include tablet {
@@ -203,6 +211,9 @@ pre {
     background-color: $white;
     color: $black;
     text-align: center;
+    -webkit-transition: all 360ms ease-in;
+    -moz-transition: all 360ms ease-in;
+    transition: all 360ms ease-in;
     @include tablet {
       width: 100%;
       position: absolute;
@@ -211,9 +222,11 @@ pre {
       transform: translateX(-50%);
     }
   }
-  footer.homeFoot { // landing page only
+  .whiteFoot { // on index mobile, on about when bg changes for skills sections
     background-color: transparent;
     color: $white;
+  }
+  footer.homeFoot { // landing page only
     @include tablet { color: $black; }
   }
   .socialLinks {

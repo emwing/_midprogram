@@ -10,7 +10,7 @@ Figure out why and fix!! */
   }
   (function ($) {
     calcVH();
-    $(window).on("orientationchange resize", function () {
+    $(window).on("orientationchange resize", function() {
       calcVH;
     });
   })(jQuery);
@@ -29,38 +29,49 @@ Figure out why and fix!! */
   });
 
 /* non-index page mainNav controls
-  listens for click on menu icon to open side menu */
-  // TO DO: convert this to css checkbox with transitions
-  $("#iconNav").click (function() {
-    $("#navList").animate ( {
-      "right": "0"
-    }, 1000, "swing");
-  });
-  $("#buttonMainNavClose").click (function() {
-    $("#navList").animate ( {
-      "right": "-100%"
-    }, 1000, "swing");
-  });
+    listens for click on menu icon to open side menu */
+/* ***** converted this to css checkbox with transitions ***** */
+/* $("#iconNav").click (function() {
+     $("#navList").animate ( {
+       "right": "0"
+     }, 1000, "swing");
+   });
+   $("#buttonMainNavClose").click (function() {
+     $("#navList").animate ( {
+       "right": "-100%"
+     }, 1000, "swing");
+   }); */
 
 // fadeToggle() the about articles when next/previous button clicked (referenced code from http://jsfiddle.net/n53qg/ )
   // TO DO: find a way to not use display: none with the challenge of Flexbox affecting layout
-  // TO DO: convert to css with transitions for jquery to toggle as a reusable function
+/* ***** converted backgroundColor change to css with transitions for jquery to ad/remove ***** */
   // TO DO: figure out how to leverage jquery next()/previous() to simplify controls
   $("#buttonSkillsDesignN").click (function() { // bg to design
     $("#backgroundInfo").fadeOut (350);
     $("#skillsDesign").delay(355).fadeIn (1000);
+    $("#aboutFoot").addClass("whiteFoot");
+    $("#rightInfoSection").addClass("silverBg");
     // change the section bgcolor (referenced code from https://stackoverflow.com/questions/14421985/delay-not-working-when-changing-background-color-of-div )
-    var $el = $("#rightInfoSection");
-
-    $el.css("background", "#fff");
-
-    setTimeout(function() {
-      $el.css("background", "#2D313A");
-    }, 360);
+    // var $el = $("#rightInfoSection");
+    //
+    // $el.css("background", "#fff");
+    //
+    // setTimeout(function() {
+    //   $el.css("background", "#2D313A");
+    // }, 360);
   });
   $("#buttonBackgroundInfoP").click (function() { // design to bg
     $("#skillsDesign").fadeOut (350);
     $("#backgroundInfo").delay(355).fadeIn (1000);
+    $("#aboutFoot").removeClass("whiteFoot");
+    $("#rightInfoSection").removeClass("silverBg");
+    // var $el = $("#rightInfoSection");
+    //
+    // $el.css("background", "#2D313A");
+    //
+    // setTimeout(function() {
+    //   $el.css("background", "#fff");
+    // }, 360);
   });
   $("#buttonSkillsWebN").click (function() { // design to web
     $("#skillsDesign").fadeOut (350);
@@ -81,13 +92,15 @@ Figure out why and fix!! */
   $("#buttonTopBg").click (function() { // return to top
     $(".hideSection").fadeOut (350);
     $("#backgroundInfo").delay(355).fadeIn (1000);
-    var $el = $("#rightInfoSection");
-
-    $el.css("background", "#2D313A");
-
-    setTimeout(function() {
-      $el.css("background", "#fff");
-    }, 360);
+    $("#aboutFoot").removeClass("whiteFoot");
+    $("#rightInfoSection").removeClass("silverBg");
+    // var $el = $("#rightInfoSection");
+    //
+    // $el.css("background", "#2D313A");
+    //
+    // setTimeout(function() {
+    //   $el.css("background", "#fff");
+    // }, 360);
   });
 
 // fadeToggle() the non-About page articles when next/previous button clicked (referenced code from http://jsfiddle.net/n53qg/ )

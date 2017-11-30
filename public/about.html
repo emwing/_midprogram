@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Emily Wing | IDM Mid-Program Review</title>
-    <meta name="description" content="">
+    <meta name="author" content="Emily Wing">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="favicon.gif">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Average|Quicksand" rel="stylesheet">
@@ -27,9 +27,16 @@
     <!-- Add your site or application content here -->
     <div id="pageWrap" class="flexContainer">
       <nav id="mainNavLanding" class="mainNav">
-        <i id="iconNav" class="fa fa-bars fa-2x"></i>
+        <input type="checkbox" name="cntrlNav" id="cntrlNav" class="cntrlNav">
+        <label for="cntrlNav">
+          <i id="iconNav" class="fa fa-bars fa-2x"></i>
+        </label>
         <ul id="navList">
-          <li id="buttonMainNavClose"><i class="fa fa-window-close fa-2x"></i></li>
+          <label for="cntrlNav">
+            <li id="buttonMainNavClose">
+              <i class="fa fa-window-close fa-2x"></i>
+            </li>
+          </label>
           <li><a href="index.html">Home</a></li>
           <li><a href="#" class="currentPage">About</a></li>
           <li><a href="webdesign.html">Web Design</a></li>
@@ -46,7 +53,7 @@
           </div> <!-- ends .picContent -->
           <div class="leftTextContent">
             <h1>Emily Wing</h1>
-            <p>(Just kidding! This is a picture of Suki.)</p>
+            <p>(Just kidding! This is a picture of my dog, Suki.)</p>
             <h2>Nice to meet you!</h2>
           </div> <!-- ends .textContent -->
         </div>  <!-- ends .heroContainer -->
@@ -208,7 +215,7 @@
               <a href="#skillsWeb"><button type="button" id="buttonSkillsWebP" class="buttonControl buttonHidden">Previous</button></a>
             </div> <!-- ends .rightTextContent .skillChart -->
           </article>
-          <footer class="pageFoot">
+          <footer class="pageFoot" id="aboutFoot">
             <div class="positionWrap">
               <div class="socialLinks">
                 <a href="http://facebook.com/emily.m.wing" target="_blank" title="Follow me on Facebook"><i class="fa fa-facebook fa-lg"></i></a>
@@ -216,8 +223,8 @@
                 <a href="https://www.pinterest.com/emilymwing/" target="_blank" title="Follow me on Pinterest"><i class="fa fa-pinterest fa-lg"></i></a>
                 <a href="https://www.linkedin.com/in/emily-wing" target="_blank" title="Connect with me on LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a>
                 <a href="mailto:emwing@emily-wing.com" target="_top" title="Send me an E-mail"><i class="fa fa-envelope fa-lg"></i></a>
-                <a href="#top"><label for="returnToTop" id="buttonTopMobile" class="buttonReturn"><i class="fa fa-arrow-up fa-lg"></i></label></a>
-                <a href="#top" title="Return to Top"><label for="returnToTop" id="buttonTop" class="buttonReturn"><i class="fa fa-arrow-up fa-lg"></i></label></a>
+                <a href="#"><label for="returnToTop" id="buttonTopMobile" class="buttonReturn"><i class="fa fa-arrow-up fa-lg"></i></label></a>
+                <a href="#" title="Return to Top"><label for="returnToTop" id="buttonTopBg" class="buttonReturn"><i class="fa fa-arrow-up fa-lg"></i></label></a>
               </div>
               <p>&copy;2017 Emily Wing</p>
             </div> <!-- ends .positionWrap -->
