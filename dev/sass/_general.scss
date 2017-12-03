@@ -2,15 +2,19 @@
 #pageWrap {
   margin: 0 auto;
   max-width: 125rem;
-  min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  background: $teal url("../img/herobg.jpg") repeat-x fixed; /* fallback */
+  background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient($beige, $teal); /* for general */
+  background-attachment: fixed;
+  background-size: auto 100vh; /* uses js to recalculate height and avoid shifting */
   @include tablet {
     display: flex;
     align-items: stretch;
     flex-direction: row;
     height: 100vh;
     overflow: hidden;
+    background: $white;
   }
 }
 
@@ -79,46 +83,45 @@ a {
 
 // leftHeroSection controls
 #leftHeroSection {
-  background: $teal url("../img/herobg.jpg") repeat-x; /* fallback */
-  background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient($beige, $teal); /* for general */
-  background-attachment: fixed;
+  @include tablet {
+    background: $teal url("../img/herobg.jpg") repeat-x fixed; /* fallback */
+    background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient($beige, $teal); /* for general */
+    background-attachment: fixed;
+  }
 }
 // set left and section's child divs to flex and fill screen
-.heroContainer { /* left section div only */
-  min-height: 100vh;
+#heroContainer { /* left section div only, uses js to recalculate height */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-end;
-  @include tablet {
-    height: 100vh;
-    justify-content: center;
-  }
+  @include tablet { justify-content: center; }
 }
-.picContent {
+#picContent {
   margin: 0 auto 2.5%;
   width: 75%;
-  height: 60vh;
+  height: 17rem; /* uses js to recalculate height to 60% of screen height */
   overflow: visible;
   position: relative;
+  @include tablet { height: 60vh; margin: 0 auto; }
 }
 .picContent img {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-height: 85%;
+  max-height: 90%;
   opacity: 0.8;
 }
 .leftTextContent {
-  margin-bottom: 10%;
-  padding: 1.5rem;
-  flex-grow: 1 auto;
+  margin: 0.75rem 0 15%;
+  padding: .75rem;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   color: $white;
   @include tablet {
-    margin-bottom: 5%;
+    margin: 1rem 0 5%;
     padding: 1.5rem 3rem;
   }
 }
@@ -137,6 +140,7 @@ a {
   transition: all 360ms ease-in;
   @include tablet { height: 100vh; }
 }
+.whiteBg { background-color: $white; }
 .silverBg { background-color: $silver; }
 
 .infoContainer { // set right sections' child divs to flex

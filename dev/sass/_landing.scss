@@ -5,7 +5,11 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background: $teal url("../img/herobg.jpg") repeat-x; /* fallback */
+  background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient($beige, $teal); /* for general */
+  background-attachment: fixed;
   @include tablet {
+    background: none;
     display: flex;
     align-items: stretch;
     flex-direction: row;

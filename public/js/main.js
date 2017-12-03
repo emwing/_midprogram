@@ -1,19 +1,24 @@
 $(document).ready(function() {
 // chrome mobile vh fix (prevent resizing vh when url bar disappears on scroll) (referenced from https://stackoverflow.com/questions/39384154/calculating-viewport-height-on-chrome-android-with-css)
-/* TO DO: when viewing site on iphone with chrome:
-  1. url bar does not minimize on scroll
-  2. scrolling is stiff
-  3. return to top buttons no longer function on mobile
-Figure out why and fix!! */
-  function calcVH() {
-    $("#pageWrap").innerHeight( $(this).innerHeight() );
-  }
-  (function ($) {
-    calcVH();
-    $(window).on("orientationchange resize", function() {
-      calcVH;
-    });
-  })(jQuery);
+/* fixed: if #pageWrap is set to viewport height, then technically the entire site is set to viewport height, and overflowing content is not counted */
+  // used the last suggestion on the reference page  for mobile contingency
+  (function() {
+    function size() {
+      // test for mobile device
+      if (/android|webos|iphone|ipad|ipod|blackberry|nokia|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec/i.test(navigator.userAgent.toLowerCase())) {
+        // calculate the screen height
+        var theminheight = Math.min(document.documentElement.clientHeight, window.screen.height, window.innerHeight);
+        // now apply height
+        $('html body #heroContainer').css('height', theminheight);
+        $('#picContent').css('height', theminheight*0.6);
+        $('#pageWrap').css( { 'background-size': 'auto ' + theminheight + 'px' } );
+      }
+    }
+    window.addEventListener('resize orientationchange', function() {
+      size();
+    }, false);
+    size();
+  }());
 
 /* index page-only menu controls
     listens for click on portfolio button to open side menu */
@@ -28,19 +33,6 @@ Figure out why and fix!! */
     }, 600, "linear");
   });
 
-/* non-index page mainNav controls
-    listens for click on menu icon to open side menu */
-/* ***** converted this to css checkbox with transitions ***** */
-/* $("#iconNav").click (function() {
-     $("#navList").animate ( {
-       "right": "0"
-     }, 1000, "swing");
-   });
-   $("#buttonMainNavClose").click (function() {
-     $("#navList").animate ( {
-       "right": "-100%"
-     }, 1000, "swing");
-   }); */
 
 // fadeToggle() the about articles when next/previous button clicked (referenced code from http://jsfiddle.net/n53qg/ )
   // TO DO: find a way to not use display: none with the challenge of Flexbox affecting layout
@@ -50,6 +42,7 @@ Figure out why and fix!! */
     $("#backgroundInfo").fadeOut (350);
     $("#skillsDesign").delay(355).fadeIn (1000);
     $("#aboutFoot").addClass("whiteFoot");
+    $("#rightInfoSection").removeClass("whiteBg");
     $("#rightInfoSection").addClass("silverBg");
     // change the section bgcolor (referenced code from https://stackoverflow.com/questions/14421985/delay-not-working-when-changing-background-color-of-div )
     // var $el = $("#rightInfoSection");
@@ -65,6 +58,7 @@ Figure out why and fix!! */
     $("#backgroundInfo").delay(355).fadeIn (1000);
     $("#aboutFoot").removeClass("whiteFoot");
     $("#rightInfoSection").removeClass("silverBg");
+    $("#rightInfoSection").addClass("whiteBg");
     // var $el = $("#rightInfoSection");
     //
     // $el.css("background", "#2D313A");
@@ -94,6 +88,7 @@ Figure out why and fix!! */
     $("#backgroundInfo").delay(355).fadeIn (1000);
     $("#aboutFoot").removeClass("whiteFoot");
     $("#rightInfoSection").removeClass("silverBg");
+    $("#rightInfoSection").addClass("whiteBg");
     // var $el = $("#rightInfoSection");
     //
     // $el.css("background", "#2D313A");

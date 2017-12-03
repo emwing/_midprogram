@@ -226,16 +226,23 @@ img {
 #pageWrap {
   margin: 0 auto;
   max-width: 125rem;
-  min-height: 100vh;
   position: relative;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background: #00a4b3 url("../img/herobg.jpg") repeat-x fixed;
+  /* fallback */
+  background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient(#ffffe2, #00a4b3);
+  /* for general */
+  background-attachment: fixed;
+  background-size: auto 100vh;
+  /* uses js to recalculate height and avoid shifting */ }
   @media screen and (min-width: 769px) {
     #pageWrap {
       display: flex;
       align-items: stretch;
       flex-direction: row;
       height: 100vh;
-      overflow: hidden; } }
+      overflow: hidden;
+      background: #ffffff; } }
 
 @media screen and (min-width: 769px) {
   .flexSection {
@@ -322,50 +329,54 @@ a {
   text-decoration: none;
   color: #00a4b3; }
 
-#leftHeroSection {
-  background: #00a4b3 url("../img/herobg.jpg") repeat-x;
-  /* fallback */
-  background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient(#ffffe2, #00a4b3);
-  /* for general */
-  background-attachment: fixed; }
+@media screen and (min-width: 769px) {
+  #leftHeroSection {
+    background: #00a4b3 url("../img/herobg.jpg") repeat-x fixed;
+    /* fallback */
+    background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient(#ffffe2, #00a4b3);
+    /* for general */
+    background-attachment: fixed; } }
 
-.heroContainer {
-  /* left section div only */
-  min-height: 100vh;
+#heroContainer {
+  /* left section div only, uses js to recalculate height */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-end; }
   @media screen and (min-width: 769px) {
-    .heroContainer {
-      height: 100vh;
+    #heroContainer {
       justify-content: center; } }
 
-.picContent {
+#picContent {
   margin: 0 auto 2.5%;
   width: 75%;
-  height: 60vh;
+  height: 17rem;
+  /* uses js to recalculate height to 60% of screen height */
   overflow: visible;
   position: relative; }
+  @media screen and (min-width: 769px) {
+    #picContent {
+      height: 60vh;
+      margin: 0 auto; } }
 
 .picContent img {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  max-height: 85%;
+  max-height: 90%;
   opacity: 0.8; }
 
 .leftTextContent {
-  margin-bottom: 10%;
-  padding: 1.5rem;
-  flex-grow: 1 auto;
+  margin: 0.75rem 0 15%;
+  padding: .75rem;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   color: #ffffff; }
   @media screen and (min-width: 769px) {
     .leftTextContent {
-      margin-bottom: 5%;
+      margin: 1rem 0 5%;
       padding: 1.5rem 3rem; } }
 
 @media screen and (min-width: 1024px) {
@@ -380,6 +391,9 @@ a {
   @media screen and (min-width: 769px) {
     #rightInfoSection {
       height: 100vh; } }
+
+.whiteBg {
+  background-color: #ffffff; }
 
 .silverBg {
   background-color: #2D313A; }
@@ -621,9 +635,15 @@ footer {
   max-width: 125rem;
   height: 100vh;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background: #00a4b3 url("../img/herobg.jpg") repeat-x;
+  /* fallback */
+  background-image: url("../img/asanoha-pattern-opt.svg"), linear-gradient(#ffffe2, #00a4b3);
+  /* for general */
+  background-attachment: fixed; }
   @media screen and (min-width: 769px) {
     #pageWrapHome {
+      background: none;
       display: flex;
       align-items: stretch;
       flex-direction: row; } }
