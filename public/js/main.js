@@ -153,4 +153,11 @@ $(document).ready(function() {
     $(".hideSection").fadeOut (350);
     $("#article01").delay(355).fadeIn (1000);
   });
+
+// animate return to top mobile (referenced code from https://html-online.com/articles/dynamic-scroll-back-top-page-button-javascript/)
+  $("#buttonTopMobile").click (function(event) {
+    event.preventDefault();
+    $("html, body").animate( { scrollTop: 0 }, "slow");
+    return false;
+  });
 });  // ends document ready
